@@ -360,9 +360,7 @@ class BootstrapRenderer implements Nette\Forms\IFormRenderer
 
 		if ($this->form->isMethod('get')) {
 			$el = $prototype;
-			/** @noinspection PhpUndefinedFieldInspection */
 			$query = parse_url($el->action, PHP_URL_QUERY);
-			/** @noinspection PhpUndefinedFieldInspection */
 			$el->action = str_replace("?$query", '', $el->action);
 			$s = '';
 			foreach (preg_split('#[;&]#', $query, null, PREG_SPLIT_NO_EMPTY) as $param) {
@@ -439,7 +437,7 @@ class BootstrapRenderer implements Nette\Forms\IFormRenderer
 		$out->addHtml($formControls);
 		$out->addHtml($groups);
 
-		return $out;
+		return (string) $out;
 	}
 
 
@@ -462,7 +460,7 @@ class BootstrapRenderer implements Nette\Forms\IFormRenderer
 		}
 		$controlHtml = $this->configElem(Cnf::INPUT, $controlHtml);
 
-		return $controlHtml;
+		return (string) $controlHtml;
 	}
 
 
@@ -508,7 +506,7 @@ class BootstrapRenderer implements Nette\Forms\IFormRenderer
 
 		$html->addHtml($hidden);
 
-		return $html;
+		return (string) $html;
 	}
 
 
