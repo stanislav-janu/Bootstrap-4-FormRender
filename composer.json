@@ -1,0 +1,49 @@
+{
+	"name": "stanislav-janu/bootstrap-4-formrender",
+	"type": "project",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Petr Čech",
+			"homepage": "https://github.com/czubehead/bootstrap-4-forms"
+		},
+		{
+			"name": "Stanislav Janů",
+			"homepage": "https://github.com/stanislav-janu"
+		}
+	],
+	"autoload": {
+		"classmap": [
+			"src"
+		]
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"JCode\\Tests\\": "tests"
+		}
+	},
+	"scripts": {
+		"sa": "vendor/bin/phpstan analyse src -l 1 --ansi",
+		"cs-t": "php -d memory_limit=512M temp/nette-coding-standard/ecs check src tests --config temp/nette-coding-standard/coding-standard-php71.yml --ansi",
+		"cs-f": "php -d memory_limit=512M temp/nette-coding-standard/ecs check src tests --config temp/nette-coding-standard/coding-standard-php71.yml --fix --ansi"
+	},
+	"require": {
+		"php": ">=7.1.0",
+
+		"nette/forms": "^3.0",
+		"nette/application": "^3.0"
+	},
+	"require-dev": {
+		"stanislav-janu/phpstan": "^0.11"
+	},
+	"conflict": {
+		"nette/forms": "<3.0"
+	},
+	"minimum-stability": "stable",
+	"prefer-stable": true,
+	"config": {
+		"platform": {
+			"php": "7.1"
+		}
+	}
+}

@@ -1,0 +1,9 @@
+vendor/*
+temp/*
+!.gitignore
+!.htaccess
+!web.config
+composer.lock
+!.idea
+.idea/watcherTasks.xml
+.idea/workspace.xml

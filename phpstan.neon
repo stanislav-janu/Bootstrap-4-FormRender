@@ -1,0 +1,16 @@
+parameters:
+	autoload_files:
+		- vendor/autoload.php
+	ignoreErrors:
+		- '#(.*)\\BootstrapRow::setValue(.*)#'
+		- '#^Construct empty\(\) is not allowed\. Use more strict comparison\.$#'
+		- '#^Method JCode\\BootstrapFormRender\\Grid\\BootstrapCell::addComponent\(\) has no return typehint specified\.$#'
+		- '#^Method JCode\\BootstrapFormRender\\BootstrapRenderer::renderControls\(\) has parameter \$parent with no typehint specified\.$#'
+		- '#^Method (.*)configElem\(\) has parameter \$(.*)\.$#'
+
+includes:
+	- vendor/phpstan/phpstan-nette/rules.neon
+	- vendor/phpstan/phpstan-nette/extension.neon
+	- vendor/phpstan/phpstan-strict-rules/rules.neon
+	- vendor/phpstan/phpstan-deprecation-rules/rules.neon
+	- vendor/thecodingmachine/phpstan-safe-rule/phpstan-safe-rule.neon
