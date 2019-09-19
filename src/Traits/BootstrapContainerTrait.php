@@ -16,6 +16,7 @@ use JCode\BootstrapFormRender\Inputs\ButtonInput;
 use JCode\BootstrapFormRender\Inputs\CheckboxInput;
 use JCode\BootstrapFormRender\Inputs\CheckboxListInput;
 use JCode\BootstrapFormRender\Inputs\DateTimeInput;
+use JCode\BootstrapFormRender\Inputs\RadioInput;
 use JCode\BootstrapFormRender\Inputs\SelectInput;
 use JCode\BootstrapFormRender\Inputs\SubmitButtonInput;
 use JCode\BootstrapFormRender\Inputs\TextAreaInput;
@@ -237,7 +238,7 @@ trait BootstrapContainerTrait
 	 */
 	public function addRadioList(string $name, $label = null, array $items = null): RadioList
 	{
-		$comp = new RadioList($label, $items);
+		$comp = new RadioInput($label, $items);
 		$this->addComponent($comp, $name);
 
 		return $comp;

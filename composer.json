@@ -24,6 +24,7 @@
 	},
 	"scripts": {
 		"sa": "vendor/bin/phpstan analyse src -l 1 --ansi",
+		"cs-i": "composer create-project nette/coding-standard temp/nette-coding-standard --ansi",
 		"cs-t": "php -d memory_limit=512M temp/nette-coding-standard/ecs check src tests --config temp/nette-coding-standard/coding-standard-php71.yml --ansi",
 		"cs-f": "php -d memory_limit=512M temp/nette-coding-standard/ecs check src tests --config temp/nette-coding-standard/coding-standard-php71.yml --fix --ansi"
 	},

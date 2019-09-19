@@ -14,7 +14,7 @@ namespace JCode\BootstrapFormRender\Inputs;
 use JCode\BootstrapFormRender\Enums\RendererOptions;
 use JCode\BootstrapFormRender\Traits\ChoiceInputTrait;
 use JCode\BootstrapFormRender\Traits\StandardValidationTrait;
-use Nette\Forms\Controls\ChoiceControl;
+use Nette\Forms\Controls\RadioList;
 use Nette\Forms\Helpers;
 use Nette\Utils\Html;
 
@@ -23,7 +23,7 @@ use Nette\Utils\Html;
  * Class RadioInput. Lets user choose one out of multiple options.
  * @package JCode\BootstrapFormRender
  */
-class RadioInput extends ChoiceControl implements IValidationInput
+class RadioInput extends RadioList implements IValidationInput
 {
 	use ChoiceInputTrait;
 	use StandardValidationTrait {
@@ -31,7 +31,7 @@ class RadioInput extends ChoiceControl implements IValidationInput
 	}
 
 	/** @var Html */
-	private $container;
+	protected $container;
 
 
 	/**
@@ -53,9 +53,6 @@ class RadioInput extends ChoiceControl implements IValidationInput
 	 */
 	public function getControl(): Html
 	{
-		// has to run
-		parent::getControl();
-
 		$items = $this->getItems();
 		$container = $this->container;
 
