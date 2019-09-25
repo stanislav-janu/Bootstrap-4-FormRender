@@ -11,8 +11,10 @@ declare(strict_types=1);
 
 namespace JCode\BootstrapFormRender\Inputs;
 
+use JCode\BootstrapFormRender\BootstrapUtils;
 use JCode\BootstrapFormRender\Traits\ChoiceInputTrait;
 use JCode\BootstrapFormRender\Traits\StandardValidationTrait;
+use Nette;
 use Nette\Forms\Controls\MultiSelectBox;
 
 
@@ -25,4 +27,15 @@ class MultiSelectInput extends MultiSelectBox implements IValidationInput
 {
 	use ChoiceInputTrait;
 	use StandardValidationTrait;
+
+	/**
+	 * Generates control's HTML element.
+	 */
+	public function getControl(): Nette\Utils\Html
+	{
+		$control = parent::getControl();
+		BootstrapUtils::standardizeClass($control);
+		$control->class[] = 'form-control';
+		return $control;
+	}
 }

@@ -16,6 +16,7 @@ use JCode\BootstrapFormRender\Inputs\ButtonInput;
 use JCode\BootstrapFormRender\Inputs\CheckboxInput;
 use JCode\BootstrapFormRender\Inputs\CheckboxListInput;
 use JCode\BootstrapFormRender\Inputs\DateTimeInput;
+use JCode\BootstrapFormRender\Inputs\MultiSelectInput;
 use JCode\BootstrapFormRender\Inputs\RadioInput;
 use JCode\BootstrapFormRender\Inputs\SelectInput;
 use JCode\BootstrapFormRender\Inputs\SubmitButtonInput;
@@ -192,7 +193,7 @@ trait BootstrapContainerTrait
 	 */
 	public function addMultiSelect(string $name, $label = null, array $items = null, int $size = null): MultiSelectBox
 	{
-		$comp = new MultiSelectBox($label, $items);
+		$comp = new MultiSelectInput($label, $items);
 		if ($size !== null) {
 			$comp->setHtmlAttribute('size', $size);
 		}
