@@ -232,9 +232,9 @@ class BootstrapRow implements IComponent, IControl
 	 * @param string|null $option
 	 * @param string|null $default
 	 *
-	 * @return string|null
+	 * @return string|bool|int|null
 	 */
-	public function getOption(?string $option, ?string $default = null): ?string
+	public function getOption(?string $option, ?string $default = null)
 	{
 		return isset($this->options[$option]) ? $this->options[$option] : $default;
 	}
@@ -263,7 +263,7 @@ class BootstrapRow implements IComponent, IControl
 	 * Sets option
 	 *
 	 * @param string $option
-	 * @param string|bool|int $value
+	 * @param string|bool|int|null $value
 	 *
 	 * @internal
 	 */
