@@ -263,11 +263,11 @@ class BootstrapRow implements IComponent, IControl
 	 * Sets option
 	 *
 	 * @param string $option
-	 * @param string $value
+	 * @param string|bool|int $value
 	 *
 	 * @internal
 	 */
-	public function setOption(string $option, string $value): void
+	public function setOption(string $option, $value): void
 	{
 		$this->options[$option] = $value;
 	}
