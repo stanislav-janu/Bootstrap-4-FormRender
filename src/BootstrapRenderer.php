@@ -677,7 +677,7 @@ class BootstrapRenderer implements Nette\Forms\IFormRenderer
 			$description = '';
 		}
 
-		if (is_scalar($description)) {
+		if (is_scalar($description) || $description instanceof Html) {
 			$el = $this->getElem(Cnf::DESCRIPTION);
 			$el->setHtml($description);
 
