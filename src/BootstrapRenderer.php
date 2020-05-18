@@ -476,6 +476,11 @@ class BootstrapRenderer implements Nette\Forms\IFormRenderer
 		if (!($parent instanceof Nette\Forms\Container || $parent instanceof Nette\Forms\ControlGroup)) {
 			throw new Nette\InvalidArgumentException('Argument must be Nette\Forms\Container or Nette\Forms\ControlGroup instance.');
 		}
+
+		if ($parent->getControls() instanceof \CallbackFilterIterator) {
+			return '';
+		}
+
 		$html = Html::el();
 		$hidden = Html::el();
 
