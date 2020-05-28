@@ -1,4 +1,4 @@
-FROM php:7.4-apache
+FROM php:7.1-apache
 
 RUN apt-get update
 RUN a2enmod alias proxy proxy_fcgi rewrite headers
