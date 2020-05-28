@@ -12,8 +12,8 @@ namespace JCode\BootstrapFormRender;
 
 use JCode\BootstrapFormRender\Traits\AddRowTrait;
 use JCode\BootstrapFormRender\Traits\BootstrapContainerTrait;
-use Nette\Application\UI\Form;
 use Nette\ComponentModel\IContainer;
+use Nette\Forms\Form;
 use Nette\Forms\IFormRenderer;
 use Nette\InvalidArgumentException;
 use Nette\Utils\Html;
