@@ -1,0 +1,24 @@
+version: '3.6'
+
+services:
+  web:
+    build: .docker/apache
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - 8090:80
+    environment:
+      DOCKER_DEV: 'true'
+    links:
+      - phpfpm
+
+  phpfpm:
+    build: .docker/fpm
+    image: php:7.4-fpm
+    restart: always
+    volumes:
+      - ./:/var/www/html
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1

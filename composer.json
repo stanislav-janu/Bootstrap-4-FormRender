@@ -35,7 +35,8 @@
 		"nette/application": "^3.0"
 	},
 	"require-dev": {
-		"stanislav-janu/phpstan": "^0.11"
+		"stanislav-janu/phpstan": "^0.11",
+		"tracy/tracy": "^2.7"
 	},
 	"conflict": {
 		"nette/forms": "<3.0"
