@@ -44,7 +44,7 @@ class CheckboxInput extends Checkbox implements IValidationInput
 	 *
 	 * @param string                 $name
 	 * @param string                 $htmlId
-	 * @param string|null            $caption
+	 * @param string|Html|null       $caption
 	 * @param bool                   $checked
 	 * @param bool|mixed             $value pass false to omit
 	 * @param bool                   $required
@@ -72,12 +72,17 @@ class CheckboxInput extends Checkbox implements IValidationInput
 			];
 		}
 
-		$label->addHtml($input);
-		$label->addHtml(Html::el('label', [
+		$_label = Html::el('label', [
 			'class' => ['custom-control-label'],
 			'for' => $htmlId,
-		])
-			->setText($caption));
+		]);
+		if ($caption instanceof Nette\Utils\IHtmlString) {
+			$_label->setHtml($caption);
+		} else {
+			$_label->setText($caption);
+		}
+		$label->addHtml($input);
+		$label->addHtml($_label);
 
 		$line = Html::el('div');
 		$line->addHtml($label);
