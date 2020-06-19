@@ -53,7 +53,7 @@ class CheckboxInput extends Checkbox implements IValidationInput
 	 *
 	 * @return Html
 	 */
-	public static function makeCheckbox(string $name, string $htmlId, ?string $caption = null, bool $checked = false, $value = false, bool $required = false, bool $disabled = false, ?Nette\Forms\Rules $rules = null): Html
+	public static function makeCheckbox(string $name, string $htmlId, $caption = null, bool $checked = false, $value = false, bool $required = false, bool $disabled = false, ?Nette\Forms\Rules $rules = null): Html
 	{
 		$label = Html::el('div', ['class' => ['custom-control', 'custom-checkbox']]);
 		$input = Html::el('input', [
