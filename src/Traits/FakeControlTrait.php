@@ -61,7 +61,6 @@ trait FakeControlTrait
 	 */
 	public function setValue($value)
 	{
-		throw new NotImplementedException;
 	}
 
 
